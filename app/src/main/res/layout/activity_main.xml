@@ -82,7 +82,7 @@
             android:layout_marginBottom="50dp"
             android:ems="10"
             android:fontFamily="@font/cairo"
-            android:hint="يجب أن لا تتجاوز 10 ساعات"
+            android:hint="يجب أن لا تتجاوز 12 ساعة"
             android:inputType="numberDecimal"
             android:textSize="20sp" />
 
