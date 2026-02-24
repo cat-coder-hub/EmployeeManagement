@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +14,6 @@
             android:padding="24dp"
             android:layoutDirection="rtl">
 
-            <!-- Title -->
             <TextView
                 android:id="@+id/titleLbl"
                 android:layout_width="wrap_content"
@@ -28,7 +26,6 @@
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/cairo"/>
 
-            <!-- الاسم -->
             <TextView
                 android:text="الاسم"
                 android:textSize="18sp"
@@ -48,7 +45,6 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/cairo"/>
 
-            <!-- المنصب -->
             <TextView
                 android:text="المنصب"
                 android:textSize="18sp"
@@ -68,7 +64,6 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/cairo"/>
 
-            <!-- الراتب بالساعة -->
             <TextView
                 android:text="الراتب بالساعة"
                 android:textSize="18sp"
@@ -88,7 +83,6 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/cairo"/>
 
-            <!-- ساعات العمل اليومية -->
             <TextView
                 android:text="عدد ساعات العمل اليومية"
                 android:textSize="18sp"
@@ -108,7 +102,6 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/cairo"/>
 
-            <!-- إجمالي الساعات -->
             <TextView
                 android:text="إجمالي ساعات العمل بالشهر"
                 android:textSize="18sp"
