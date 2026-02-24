@@ -21,7 +21,7 @@ class Display : AppCompatActivity() {
     fun search(view: View){
         val inn = searchTxt.text.toString()
         e = Employee(null, inn, inn, null)
-        val data = db.search(e)
+        val data = if (inn != "") db.search(e) else db.show()
         val adp = EmpAdapter(this, data)
         myLv.adapter = adp
     }

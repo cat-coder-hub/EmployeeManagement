@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         if (name.isEmpty() || (role != "عامل" && role != "مدير" && role != "موظف") || time == null){
             Toast.makeText(this, "تأكد من إدخال جميع القيم بالشكل الصحيح!", Toast.LENGTH_SHORT).show()
         }
+        else if (time > 10.0) Toast.makeText(this, "تجاوزت عدد ساعات العمل المسموحة (10 ساعات)!", Toast.LENGTH_SHORT).show()
         else{
             val salary = when(role){
                 "عامل" -> 30 * time * 5

@@ -65,12 +65,13 @@
             android:hint="عامل / موظف / مدير"
             android:inputType="textPersonName"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/lbl4"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/cairo"
-            android:text="عدد ساعات العمل"
+            android:text="عدد ساعات العمل اليومية"
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -82,7 +83,7 @@
             android:ems="10"
             android:fontFamily="@font/cairo"
             android:hint="مثال: 10"
-            android:inputType="textPersonName"
+            android:inputType="numberDecimal"
             android:textSize="20sp" />
 
         <TextView
@@ -95,36 +96,62 @@
             android:textColor="#000000"
             android:textSize="25sp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+        <TableLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/showBtn"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FEFEFE"
-                android:onClick="show"
-                app:srcCompat="@drawable/show" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
-            <Space
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <ImageView
+                    android:id="@+id/showBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:onClick="show"
+                    app:srcCompat="@drawable/show" />
 
-            <ImageView
-                android:id="@+id/addBtn"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FEFEFE"
-                android:onClick="add"
-                app:srcCompat="@drawable/add" />
+                <ImageView
+                    android:id="@+id/addBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:onClick="add"
+                    app:srcCompat="@drawable/add" />
+            </TableRow>
 
-        </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lbl7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/cairo"
+                    android:text="عرض الموظفين"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/lbl6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/cairo"
+                    android:text="إضافةالموظف"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </TableRow>
+
+        </TableLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

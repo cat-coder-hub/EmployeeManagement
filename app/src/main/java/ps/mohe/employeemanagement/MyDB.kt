@@ -42,19 +42,23 @@ class MyDB(context: Context) : SQLiteOpenHelper(context, DB, null, VERSION) {
         db.execSQL("delete from $TBL where $E_ID = ${e.id};")
     }
 
-    fun show() : ArrayList<Employee>{
+    fun show(): ArrayList<Employee> {
         val db = readableDatabase
         val Employees = ArrayList<Employee>()
         val c = db.rawQuery("select * from $TBL;", null)
 
-        do {
-            val id = c.getInt(c.getColumnIndexOrThrow(E_ID))
-            val name = c.getString(c.getColumnIndexOrThrow(E_NAME))
-            val salary = c.getDouble(c.getColumnIndexOrThrow(E_SALARY))
-            val role = c.getString(c.getColumnIndexOrThrow(E_ROLE))
-            val e = Employee(id, name, role, salary)
-            Employees.add(e)
-        } while (c.moveToNext())
+        if (c.moveToFirst()) {
+            do {
+                val id = c.getInt(c.getColumnIndexOrThrow(E_ID))
+                val name = c.getString(c.getColumnIndexOrThrow(E_NAME))
+                val salary = c.getDouble(c.getColumnIndexOrThrow(E_SALARY))
+                val role = c.getString(c.getColumnIndexOrThrow(E_ROLE))
+
+                val e = Employee(id, name, role, salary)
+                Employees.add(e)
+
+            } while (c.moveToNext())
+        }
 
         c.close()
         db.close()
@@ -66,14 +70,18 @@ class MyDB(context: Context) : SQLiteOpenHelper(context, DB, null, VERSION) {
         val Employees = ArrayList<Employee>()
         val c = db.rawQuery("select * from $TBL where $E_NAME = \"${e.name}\" or $E_ROLE = \"${e.role}\";", null)
 
-        do {
-            val id = c.getInt(c.getColumnIndexOrThrow(E_ID))
-            val name = c.getString(c.getColumnIndexOrThrow(E_NAME))
-            val salary = c.getDouble(c.getColumnIndexOrThrow(E_SALARY))
-            val role = c.getString(c.getColumnIndexOrThrow(E_ROLE))
-            val e = Employee(id, name, role, salary)
-            Employees.add(e)
-        } while (c.moveToNext())
+        if (c.moveToFirst()) {
+            do {
+                val id = c.getInt(c.getColumnIndexOrThrow(E_ID))
+                val name = c.getString(c.getColumnIndexOrThrow(E_NAME))
+                val salary = c.getDouble(c.getColumnIndexOrThrow(E_SALARY))
+                val role = c.getString(c.getColumnIndexOrThrow(E_ROLE))
+
+                val emp = Employee(id, name, role, salary)
+                Employees.add(emp)
+
+            } while (c.moveToNext())
+        }
 
         c.close()
         db.close()
