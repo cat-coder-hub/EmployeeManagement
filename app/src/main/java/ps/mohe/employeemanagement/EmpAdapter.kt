@@ -1,6 +1,7 @@
 package ps.mohe.employeemanagement
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,23 @@ class EmpAdapter(context: Context, val objects: ArrayList<Employee>) :
             db.removeEmp(e)
             objects.removeAt(position)
             notifyDataSetChanged()
+        }
+
+        view.infoBtn.setOnClickListener {
+            val sph = mapOf(
+                "عامل" to 5.0,
+                "موظف" to 7.0,
+                "مدير" to 10.0
+            )
+
+            val salaryph = sph[e.role] ?: 0.0
+            val time = (e.salary ?: 0.0) / (30 * salaryph)
+
+            val intent = Intent(context, InfoActivity::class.java)
+            intent.putExtra("name", e.name)
+            intent.putExtra("role", e.role)
+            intent.putExtra("dailyTime", time)
+           context.startActivity(intent)
         }
         return view
     }

@@ -49,7 +49,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/cairo"
                 android:text="اسم الموظف"
-                android:textColor="#000000"
+                android:textColor="#0D47A1"
                 android:textSize="20sp" />
 
             <TextView
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/cairo"
                 android:text="راتب الموظف"
-                android:textColor="#202020"
+                android:textColor="#1B5E20"
                 android:textSize="16sp" />
         </LinearLayout>
 
